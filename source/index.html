@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>登錄 | 醜小鴨-剩食資訊平臺</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="img\logo.png">
+        <link rel="stylesheet" href="css\w3school.css">
+        <link rel="stylesheet" href="css\login.css">
+        <link rel="stylesheet" href="css\sidebar.css">
+        <link rel="stylesheet" href="css\role.css">
+        
+    </head>
+    <body>
+        <div class="w3-teal">
+            <!--nav-menu-button-->
+            <button class="w3-button w3-teal w3-xlarge w3-hide-large">醜小鴨-剩食咨詢平臺</button>
+            <!--Content-title-->
+            <div class="w3-container">
+                <h1> <span>登錄 | 選擇使用者身份</span></h1> <!--GET-USER-ID-->
+            </div>
+        </div>
+        <div class="bob-container w3-container"> 
+            <div class="bob-row">
+              <div class="bob-3item">
+                <a href="https://ud-charity-user.auth.us-east-2.amazoncognito.com/login?client_id=6cq78lvn4lqapaiehgo5dupkr3&response_type=code&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://dede5qaf776p.cloudfront.net/charity_home.html">
+                  <img src="img\charity_icon.png"/>
+                  <p style="font-size:15px;">慈善機構</p>
+                </a> 
+              </div>
+              <div class="bob-3item">
+                <a href="https://ud-kitchen-user.auth.us-east-2.amazoncognito.com/login?client_id=4uu0c0hlvrio7tvpm4hh9pmhs6&response_type=code&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://dede5qaf776p.cloudfront.net/kitchen_home.html">
+                  <img src="img\kitchen_icon.png"/>
+                  <p style="font-size:15px;">中央厨房</p>
+                </a>
+              </div>
+              <div class="bob-3item">
+                <a href="https://ud-supplier-user.auth.us-east-2.amazoncognito.com/login?client_id=5i4s9pus5bspt1bhf3qodma8ce&response_type=code&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://dede5qaf776p.cloudfront.net/supplier_home.html">
+                  <img src="img\supplier_icon.png"/>
+                  <p style="font-size:15px;">供應商</p>
+                </a>
+              </div>
+            </div>
+        </div>
+    </body>
+    <script>
+
+    </script>
+</html>

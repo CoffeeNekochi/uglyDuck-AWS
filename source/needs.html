@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>中央厨房 | 醜小鴨-剩食資訊平台</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="img\logo.png">
+        <link rel="stylesheet" href="css\w3school.css">
+        <link rel="stylesheet" href="css\home.css">
+        <link rel="stylesheet" href="css\form.css">
+        <link rel="stylesheet" href="css\sidebar.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
+        <link rel="stylesheet" href="css\project_list.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+        <script src="js/home.js"></script>
+        
+    </head>
+    <body>
+        <div class="w3-sidebar w3-bar-block w3-collapse w3-card" style="width:200px;" id="mySidebar">
+            <button class="w3-bar-item w3-button w3-large w3-hide-large white" onclick="w3_close()">Close &times;</button>
+            <a href="https://ud-kitchen-user.auth.us-east-2.amazoncognito.com/logout?client_id=4uu0c0hlvrio7tvpm4hh9pmhs6&logout_uri=https://dede5qaf776p.cloudfront.net/index.html" class="w3-bar-item side_header">首頁 | 點擊登出</a>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="kitchen_home.html" ><img src="img\project_main.png">食品履歷</a>
+                    </li>
+                    <li>
+                        <a href="food_list.html"><img src="img\new_project.png"><span>食品清單</span></a>
+                    </li>
+                    <li>
+                        <a href="needs.html"><img src="img\staff.png">機構需求</a>
+                    </li>
+                    <li>
+                      <a href="stock.html"><img src="img\calender.png"><span class="">食材庫存</span></a>
+                    </li>
+                </ul>
+              </nav>
+        </div>
+
+        <!-- Head -->
+        <div class="w3-main" style="margin-left:200px">
+            <div class="w3-teal">
+                <!--nav-menu-button-->
+                <button class="w3-button w3-teal w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
+                <!--Content-title-->
+                <div class="w3-container">
+                    <h1>機構需求</h1>
+                </div>
+            </div>
+            <!--Main-->
+            <!--table-->
+            <div class="container-table_project"style="margin-left:70px">
+                <div class="wrap-table_project">
+                    <table class="table_project">
+                        <thead>
+                            <tr class="table_project-head">
+                                <th class="column1">機構名稱</th>
+                                <th class="column2">機構編號</th>
+                                <th class="column4" style="max-width: 300px;">需求量</th>
+                                <th class="column5">動作    </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="column1">慈善vv</td>
+                                <td class="column2">A000010</td>
+                                <td class="column4">200份</td>
+                                <td class="column5">
+                                    <input type="button" name="edit" value="詳情查看"     id="view1"    onclick="document.getElementById('dataModal').style.display='block'"        class="button button-view edit_data"/>
+                                    <input type="button" name="view" value="接受委托" id="change2"  onclick="document.getElementById('edit_emp_Modal').style.display='block'"   class="button button-change"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="column1">社區福利所</td>
+                                <td class="column2">A000011</td>
+                                <td class="column4">150份</td>
+                                <td class="column5">
+                                    <input type="button" name="edit" value="詳情查看"     id="view1"    onclick="document.getElementById('dataModal2').style.display='block'"        class="button button-view edit_data"/>
+                                    <input type="button" name="view" value="接受委托" id="change2"  onclick="document.getElementById('edit_emp_Modal').style.display='block'"   class="button button-change"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="column1">街區資助單位</td>
+                                <td class="column2">A000012</td>
+                                <td class="column4">110份</td>
+                                <td class="column5">
+                                    <input type="button" name="edit" value="詳情查看"     id="view1"    onclick="document.getElementById('dataModal3').style.display='block'"        class="button button-view edit_data"/>
+                                    <input type="button" name="view" value="接受委托" id="change2"  onclick="document.getElementById('edit_emp_Modal').style.display='block'"   class="button button-change"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="column1">慈善小店</td>
+                                <td class="column2">A000013</td>
+                                <td class="column4">250份</td>
+                                <td class="column5">
+                                    <input type="button" name="edit" value="詳情查看"     id="view1"    onclick="document.getElementById('dataModal4').style.display='block'"        class="button button-view edit_data"/>
+                                    <input type="button" name="view" value="接受委托" id="change2"  onclick="document.getElementById('edit_emp_Modal').style.display='block'"   class="button button-change"/>
+                                </td>
+                            </tr>
+                            <!---->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagi">
+                    <table class="pagi_table">
+                        <tr>
+                            <td>
+                                <p>共 '1' 筆 - 在 第'1' 頁 - 共 '1' 頁'</p>
+                            </td>
+                            <td>
+                                <div class="pagination">
+                                    <a href="#" class="active">1</a>
+                                    <a href="#">2</a>
+                                    <a href="#">3</a>
+                                    <a href="#">4</a>
+                                    <a href="#">5</a>
+                                    <a href="#">6</a>
+                                    <!---->
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<!-- employee data view-->
+<div id="dataModal" class="w3-modal fade">
+    <div class="w3-modal-content radius w3-animate-zoom">  
+         <div class="w3-container radius" style="background-color: white;">  
+            <span onclick="document.getElementById('dataModal').style.display='none'" class="w3-button w3-display-topright"  data-dismiss="w3-modal">&times;</span>
+            <h3>機構需求</h3><hr>
+            <div class="modal-body" id="project_detail">
+                <table class="w3-table tab-w100_80">
+                    <tr>
+                        <th class="bold2">機構編號</th>
+                        <td>A000010</td>
+                    </tr>
+                </table>
+
+                <table class="w3-table tab-w100_200">
+                    <tr>
+                        <th class="bold2">機構名稱</th>
+                        <td>慈善vv</td>
+                    </tr>
+                    <tr>
+                        <th class="bold2">聯係電話</th>
+                        <td>0902312312</td>
+                    </tr>
+                </table>
+
+                <table class="w3-table tab-w30p_5p">
+                    <tr>
+                        <th class="bold2">聯係地址</th>
+                        <td>臺中市西屯區西屯路22號</td>
+                    </tr>
+                </table>
+                
+                <table class="w3-table tab-works-on">
+                    <tr>
+                        <th class="bold2" style="width: 60px;">需求量</th>
+                        <th class="bold2" style="width: 300px;">需求類型</th>
+                        <th class="bold2" style="width: 60px;"> 保存時間</th>
+                        <th class="bold2" >                     最晚送達時間</th>
+                    </tr>
+                    <tr>
+                        <td>200</td>
+                        <td>牛排</td>
+                        <td>5h</td>
+                        <td>2021/10/30 18:30</td>
+                    </tr>
+                </table>
+            </div>
+            <button type="button" onclick="document.getElementById('dataModal').style.display='none'" class="button-close fl-lf" data-dismiss="w3-modal">確認</button>  
+         </div>  
+    </div>  
+</div>
+<!-- 1 -->
+
+<div id="dataModal2" class="w3-modal fade">
+    <div class="w3-modal-content radius w3-animate-zoom">  
+         <div class="w3-container radius" style="background-color: white;">  
+            <span onclick="document.getElementById('dataModal').style.display='none'" class="w3-button w3-display-topright"  data-dismiss="w3-modal">&times;</span>
+            <h3>機構需求</h3><hr>
+            <div class="modal-body" id="project_detail">
+                <table class="w3-table tab-w100_80">
+                    <tr>
+                        <th class="bold2">機構編號</th>
+                        <td>A000011</td>
+                    </tr>
+                </table>
+
+                <table class="w3-table tab-w100_200">
+                    <tr>
+                        <th class="bold2">機構名稱</th>
+                        <td>社區福利所</td>
+                    </tr>
+                    <tr>
+                        <th class="bold2">聯係電話</th>
+                        <td>0900012345</td>
+                    </tr>
+                </table>
+
+                <table class="w3-table tab-w30p_5p">
+                    <tr>
+                        <th class="bold2">聯係地址</th>
+                        <td>臺中市西屯區西屯路125號</td>
+                    </tr>
+                </table>
+                
+                <table class="w3-table tab-works-on">
+                    <tr>
+                        <th class="bold2" style="width: 60px;">需求量</th>
+                        <th class="bold2" style="width: 300px;">需求類型</th>
+                        <th class="bold2" style="width: 60px;"> 保存時間</th>
+                        <th class="bold2" >                     最晚送達時間</th>
+                    </tr>
+                    <tr>
+                        <td>150</td>
+                        <td>豬扒飯</td>
+                        <td>11h</td>
+                        <td>2021/10/31 17:30</td>
+                    </tr>
+                </table>
+            </div>
+            <button type="button" onclick="document.getElementById('dataModal2').style.display='none'" class="button-close fl-lf" data-dismiss="w3-modal">確認</button>  
+         </div>  
+    </div>  
+</div>
+<!-- 2 -->
+
+<div id="dataModal3" class="w3-modal fade">
+    <div class="w3-modal-content radius w3-animate-zoom">  
+         <div class="w3-container radius" style="background-color: white;">  
+            <span onclick="document.getElementById('dataModal').style.display='none'" class="w3-button w3-display-topright"  data-dismiss="w3-modal">&times;</span>
+            <h3>機構需求</h3><hr>
+            <div class="modal-body" id="project_detail">
+                <table class="w3-table tab-w100_80">
+                    <tr>
+                        <th class="bold2">機構編號</th>
+                        <td>A000011</td>
+                    </tr>
+                </table>
+
+                <table class="w3-table tab-w100_200">
+                    <tr>
+                        <th class="bold2">機構名稱</th>
+                        <td>社區福利所</td>
+                    </tr>
+                    <tr>
+                        <th class="bold2">聯係電話</th>
+                        <td>0956123890</td>
+                    </tr>
+                </table>
+
+                <table class="w3-table tab-w30p_5p">
+                    <tr>
+                        <th class="bold2">聯係地址</th>
+                        <td>臺中市南區224號</td>
+                    </tr>
+                </table>
+                
+                <table class="w3-table tab-works-on">
+                    <tr>
+                        <th class="bold2" style="width: 60px;">需求量</th>
+                        <th class="bold2" style="width: 300px;">需求類型</th>
+                        <th class="bold2" style="width: 60px;"> 保存時間</th>
+                        <th class="bold2" >                     最晚送達時間</th>
+                    </tr>
+                    <tr>
+                        <td>110</td>
+                        <td>意大利麵</td>
+                        <td>9h</td>
+                        <td>2021/11/2 12:30</td>
+                    </tr>
+                </table>
+            </div>
+            <button type="button" onclick="document.getElementById('dataModal3').style.display='none'" class="button-close fl-lf" data-dismiss="w3-modal">確認</button>  
+         </div>  
+    </div>  
+</div>
+<!-- 3 -->
+
+<div id="dataModal4" class="w3-modal fade">
+    <div class="w3-modal-content radius w3-animate-zoom">  
+         <div class="w3-container radius" style="background-color: white;">  
+            <span onclick="document.getElementById('dataModal').style.display='none'" class="w3-button w3-display-topright"  data-dismiss="w3-modal">&times;</span>
+            <h3>機構需求</h3><hr>
+            <div class="modal-body" id="project_detail">
+                <table class="w3-table tab-w100_80">
+                    <tr>
+                        <th class="bold2">機構編號</th>
+                        <td>A000013</td>
+                    </tr>
+                </table>
+
+                <table class="w3-table tab-w100_200">
+                    <tr>
+                        <th class="bold2">機構名稱</th>
+                        <td>慈善小店</td>
+                    </tr>
+                    <tr>
+                        <th class="bold2">聯係電話</th>
+                        <td>0900023234</td>
+                    </tr>
+                </table>
+
+                <table class="w3-table tab-w30p_5p">
+                    <tr>
+                        <th class="bold2">聯係地址</th>
+                        <td>臺中市北區146號</td>
+                    </tr>
+                </table>
+                
+                <table class="w3-table tab-works-on">
+                    <tr>
+                        <th class="bold2" style="width: 60px;">需求量</th>
+                        <th class="bold2" style="width: 300px;">需求類型</th>
+                        <th class="bold2" style="width: 60px;"> 保存時間</th>
+                        <th class="bold2" >                     最晚送達時間</th>
+                    </tr>
+                    <tr>
+                        <td>250</td>
+                        <td>奶油培根意大利麵</td>
+                        <td>17h</td>
+                        <td>2021/11/3 10:30</td>
+                    </tr>
+                </table>
+            </div>
+            <button type="button" onclick="document.getElementById('dataModal4').style.display='none'" class="button-close fl-lf" data-dismiss="w3-modal">確認</button>  
+         </div>  
+    </div>  
+</div>
+<!-- 4 -->
+
+<!-- emp rating edit-->
+<div id="edit_emp_Modal" class="w3-modal fade">
+    <div class="w3-modal-content radius w3-animate-zoom">  
+         <div class="w3-container radius" style="background-color: white;">  
+            <span onclick="document.getElementById('edit_emp_Modal').style.display='none'" class="w3-button w3-display-topright"  data-dismiss="modal">&times;</span>
+            <h3>接受訂單</h3><hr>
+            <div class="modal-body">
+                <form action="/action_page.php" method="post" id="insert_form">
+                    <div class="w3-container">
+                        <table class="w3-table tab-w100_200 gray">
+                            <tr>
+                                <th>中央厨房名稱</th>
+                                <td id="pid">[Name]</td>         <!--eid-->
+                            </tr>
+                        </table>
+                        <table class="w3-table tab-w100_200 gray">
+                            <tr>
+                                <form>
+                                    <label for="appt">預計送達時間  </label>
+                                    <input type="time" id="appt" name="appt">
+                                </form>
+                            </tr>
+                        </table>
+                        <table class="w3-table tab-w100_200 gray">
+                            <tr>
+                                <lable for="require_num"><span>實際供應量:     </span></lable>
+                                <input type="text" id="num" name="num"><br>
+                            </tr>
+                        </table>
+                        <div class="form-style-1">
+                            <label for="detail">                <!--rating-->
+                                <span>食品清單</span>
+                                <textarea class="textarea-field" name="detail"></textarea>
+                            </label>
+                            <div class="submit">
+                                <label><input type="submit" style="background-color: green;" value="確認" /></label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+             <hr>
+            <button type="button" onclick="document.getElementById('edit_emp_Modal').style.display='none'" class="button-close" data-dismiss="modal">取消</button>  
+         </div>  
+    </div>  
+</div>
+<script>
+    $(document).ready(function(){   
+         $(document).on('click', '.edit_data', function(){  
+              var project_id = $(this).attr("P_id");  
+              $.ajax({  
+                   url:"fetch.php",  
+                   method:"POST",  
+                   data:{project_id:project_id},  
+                   dataType:"json",  
+                   success:function(data){  
+                        $('#name').val(data.name);  
+                        $('#address').val(data.address);  
+                        $('#gender').val(data.gender);  
+                        $('#designation').val(data.designation);  
+                        $('#age').val(data.age);  
+                        $('#employee_id').val(data.id);  
+                        $('#insert').val("Update");  
+                        $('#edit_data_Modal').modal('show');  
+                   }  
+              });  
+         });  
+         $('#insert_form').on("submit", function(event){  
+              event.preventDefault();  
+              if($('#name').val() == "")  
+              {  
+                   alert("Name is required");  
+              }  
+              else if($('#address').val() == '')  
+              {  
+                   alert("Address is required");  
+              }  
+              else if($('#designation').val() == '')  
+              {  
+                   alert("Designation is required");  
+              }  
+              else if($('#age').val() == '')  
+              {  
+                   alert("Age is required");  
+              }  
+              else  
+              {  
+                   $.ajax({  
+                        url:"insert.php",  
+                        method:"POST",  
+                        data:$('#insert_form').serialize(),  
+                        beforeSend:function(){  
+                             $('#insert').val("Inserting");  
+                        },  
+                        success:function(data){  
+                             $('#insert_form')[0].reset();  
+                             $('#add_data_Modal').modal('hide');  
+                             $('#employee_table').html(data);  
+                        }  
+                   });  
+              }  
+         });  
+         $(document).on('click', '.view_data', function(){  
+              var employee_id = $(this).attr("id");  
+              if(employee_id != '')  
+              {  
+                   $.ajax({  
+                        url:"select.php",  
+                        method:"POST",  
+                        data:{employee_id:employee_id},  
+                        success:function(data){  
+                             $('#employee_detail').html(data);  
+                             $('#dataModal').modal('show');  
+                        }  
+                   });  
+              }            
+         });  
+    });  
+    </script>

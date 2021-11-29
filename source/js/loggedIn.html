@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+    each id
+    get-button: READ/GET Products
+    create-input: create text
+    create-form: Create/POST
+
+-->
+<html>
+    <head>
+        <title>AJAX API Tutorial</title>
+    </head>
+    <body>
+        
+        <p>You're logged in!</p>
+        <p>Logout? <a href="https://ud-supplier-user.auth.us-east-2.amazoncognito.com/logout?client_id=5i4s9pus5bspt1bhf3qodma8ce&logout_uri=https://dede5qaf776p.cloudfront.net/loggedOut.html">Logout</a></p>
+        <h1>AJAX API Tutorial h1</h1>
+        <button id="get-button">READ/GET Products</button>
+        <form id="create-form">
+            <label>Id<input type="text" id="create-id"></label>
+            <label>Name<input type="text" id="create-name"></label>
+            <button>Create/POST</button>
+        </form>
+        <hr>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="list"></tbody>
+        </table>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="scripts.js"></script>
+    </body>
+</html>

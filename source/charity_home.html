@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>慈善機構 | 醜小鴨-剩食資訊平台</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="img\logo.png">
+        <link rel="stylesheet" href="css\w3school.css">
+        <link rel="stylesheet" href="css\home.css">
+        <link rel="stylesheet" href="css\form.css">
+        <link rel="stylesheet" href="css\sidebar.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
+        <link rel="stylesheet" href="css\project_list.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+        <script src="js/charity_foodlist.js"></script>
+        
+    </head>
+    <body>
+        <!--Sidebar-->
+        <div class="w3-sidebar w3-bar-block w3-collapse w3-card" style="width:200px;" id="mySidebar">
+            <button class="w3-bar-item w3-button w3-large w3-hide-large white" onclick="w3_close()">Close &times;</button>
+            <a href="https://ud-charity-user.auth.us-east-2.amazoncognito.com/logout?client_id=6cq78lvn4lqapaiehgo5dupkr3&logout_uri=https://dede5qaf776p.cloudfront.net/index.html" class="w3-bar-item side_header">首頁 | 點擊登出</a>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="charity_home.html"><img src="img\new_project.png"><span>食品清單</span></a>
+                    </li>
+                    <li>
+                        <a href="needs_charitable.html"><img src="img\staff.png">機構需求</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Head -->
+        <div class="w3-main" style="margin-left:200px">
+            <div class="w3-teal">
+                <!--nav-menu-button-->
+                <button class="w3-button w3-teal w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
+                <!--Content-title-->
+                <div class="w3-container">
+                    <h1>食品清單</h1>
+                </div>
+            </div>
+            <!--Main-->
+            <!--table-->
+            
+            <div class="container-table_project" style="margin-left:20px">
+                <div class="wrap-table_project">
+                    <button id="get-button" class="button button-view">更新列表</button>
+                    <table class="table_project">
+                        <thead>
+                            <tr class="table_project-head">
+                                <th class="column1">中央厨房</th>
+                                <th class="column1">品項</th>
+                                <th class="column2">數量</th>
+                                <th class="column1">食用期限</th>
+                            </tr>
+                        </thead>
+                        <tbody id="list"></tbody>
+                    </table>
+                </div>
+                <div class="pagi">
+                    <table class="pagi_table">
+                        <tr>
+                            <td id="paginum">
+                                <p>共 '1' 筆</p>
+                                <!---->
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

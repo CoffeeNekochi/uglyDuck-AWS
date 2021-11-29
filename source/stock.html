@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>供應商 | 醜小鴨-剩食資訊平台</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="img\logo.png">
+        <link rel="stylesheet" href="css\w3school.css">
+        <link rel="stylesheet" href="css\home.css">
+        <link rel="stylesheet" href="css\form.css">
+        <link rel="stylesheet" href="css\sidebar.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
+        <link rel="stylesheet" href="css\project_list.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+        <script src="js/stock.js"></script>
+        
+    </head>
+    <body>
+        <!--Sidebar-->
+        <div class="w3-sidebar w3-bar-block w3-collapse w3-card" style="width:200px;" id="mySidebar">
+            <button class="w3-bar-item w3-button w3-large w3-hide-large white" onclick="w3_close()">Close &times;</button>
+            <a href="https://ud-kitchen-user.auth.us-east-2.amazoncognito.com/logout?client_id=4uu0c0hlvrio7tvpm4hh9pmhs6&logout_uri=https://dede5qaf776p.cloudfront.net/index.html" class="w3-bar-item side_header">首頁 | 點擊登出</a>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="kitchen_home.html" ><img src="img\project_main.png">食品履歷</a>
+                    </li>
+                    <li>
+                        <a href="food_list.html"><img src="img\new_project.png"><span>食品清單</span></a>
+                    </li>
+                    <li>
+                        <a href="needs.html"><img src="img\staff.png">機構需求</a>
+                    </li>
+                    <li>
+                      <a href="stock.html"><img src="img\calender.png"><span class="">食材庫存</span></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Head -->
+        <div class="w3-main" style="margin-left:200px">
+            <div class="w3-teal">
+                <!--nav-menu-button-->
+                <button class="w3-button w3-teal w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
+                <!--Content-title-->
+                <div class="w3-container">
+                    <h1>食材庫存 </h1>
+                </div>
+            </div>
+            <!--Main-->
+            <!--table-->
+            <div class="container-table_project" style="margin-left:40px">
+                <div class="wrap-table_project" style="margin-left:40px">
+                    <button id="get-button" class="button button-view">更新列表</button>
+                    <input type="button" name="edit" value="上傳登記"     id="create_resume"    onclick="document.getElementById('edit_emp_Modal').style.display='block'"        class="button button-change edit_data" style="margin-left:1100px; margin-bottom: 30px;"/>
+                    <table class="table_project">
+                        <thead>
+                            <tr class="table_project-head">
+                                <th class="column1">品項ID</th>
+                                <th class="column2">品項</th>
+                                <th class="column3">數量</th>
+                                <th class="column4">重量</th>
+                                <th class="column5">預估可保存期限    </th>
+                            </tr>
+                        </thead>
+                        <tbody id="list"></tbody>
+                    </table>
+                </div>
+                <div class="pagi">
+                    <table class="pagi_table">
+                        <tr>
+                            <td id="paginum">
+                                <p>共 '1' 筆</p>
+                                <!---->
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<!-- emp rating edit-->
+<div id="edit_emp_Modal" class="w3-modal fade">
+    <div class="w3-modal-content radius w3-animate-zoom">  
+         <div class="w3-container radius" style="background-color: white;">  
+            <span onclick="document.getElementById('edit_emp_Modal').style.display='none'" class="w3-button w3-display-topright"  data-dismiss="modal">&times;</span>
+            <h3>上傳登記</h3><hr>
+            <div class="modal-body">
+                <form id="create-form">
+                    <div class="w3-container">
+                        <table class="w3-table tab-w100_200 gray">
+                            <tr>
+                                <lable for="require_num"><span>品項名稱     </span></lable>
+                                <input type="text" id="new_name" name="new_weight"><br>
+                            </tr>
+                            <tr>
+                                <lable for="required"><span>預估可保存期限     </span></lable>
+                                <input type="datetime" id="new_date" name="new_date"><br>
+                            </tr>
+                            <tr>
+                                <lable for="require_num"><span>數量     </span></lable>
+                                <input type="number" id="new_numofitem" name="new_numofitem"><br>
+                            </tr>
+                            <tr>
+                                <lable for="require_num"><span>重量(g)     </span></lable>
+                                <input type="number" id="new_weight" name="new_weight"><br>
+                            </tr>
+                        </table>
+                        <button class="button button-view edit_data" onclick="document.getElementById('edit_emp_Modal').style.display='none'"  style="background-color: green;">發送</button>
+                    </div>
+                </form>
+            </div>
+             <hr>
+            <button type="button" onclick="document.getElementById('edit_emp_Modal').style.display='none'" class="button-close" data-dismiss="modal">取消</button>  
+         </div>  
+    </div>  
+</div>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>中央厨房 | 醜小鴨-剩食資訊平台</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="img\logo.png">
+        <link rel="stylesheet" href="css\w3school.css">
+        <link rel="stylesheet" href="css\home.css">
+        <link rel="stylesheet" href="css\form.css">
+        <link rel="stylesheet" href="css\sidebar.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
+        <link rel="stylesheet" href="css\project_list.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+        <script src="js/supplier_home.js"></script>
+        
+    </head>
+    <body>
+        <!--Sidebar-->
+        <div class="w3-sidebar w3-bar-block w3-collapse w3-card" style="width:200px;" id="mySidebar">
+            <button class="w3-bar-item w3-button w3-large w3-hide-large white" onclick="w3_close()">Close &times;</button>
+            <a href="https://ud-kitchen-user.auth.us-east-2.amazoncognito.com/logout?client_id=4uu0c0hlvrio7tvpm4hh9pmhs6&logout_uri=https://dede5qaf776p.cloudfront.net/index.html" class="w3-bar-item side_header">首頁 | 點擊登出</a>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="kitchen_home.html" ><img src="img\project_main.png">食品履歷</a>
+                    </li>
+                    <li>
+                        <a href="food_list.html"><img src="img\new_project.png"><span>食品清單</span></a>
+                    </li>
+                    <li>
+                        <a href="needs.html"><img src="img\staff.png">機構需求</a>
+                    </li>
+                    <li>
+                      <a href="stock.html"><img src="img\calender.png"><span class="">食材庫存</span></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Head -->
+        <div class="w3-main" style="margin-left:200px">
+            <div class="w3-teal">
+                <!--nav-menu-button-->
+                <button class="w3-button w3-teal w3-xlarge w3-hide-large" onclick="w3_open()">&#9776;</button>
+                <!--Content-title-->
+                <div class="w3-container">
+                    <h1>食品履歷</h1>
+                </div>
+            </div>
+            <!--Main-->
+            <!--table-->
+            <div class="container-table_project"style="margin-left:40px" >
+                <div class="wrap-table_project">
+                    <button id="get-button" class="button button-view">更新列表</button>
+                    <table class="table_project">
+                        <thead>
+                            <tr class="table_project-head">
+                                <th class="column1">日期</th>
+                                <th class="column2">履歷編號</th>
+                                <th class="column4" style="max-width: 300px;">簡要資訊</th>
+                                <th class="column5">動作    </th>
+                            </tr>
+                        </thead>
+                        <tbody id="list"></tbody>
+                    </table>
+                </div>
+                <div class="pagi">
+                    <table class="pagi_table">
+                        <tr>
+                            <td id="paginum">
+                                <p>共 '1' 筆</p>
+                                <!---->
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<!-- employee data view-->
+<div id="dataModal" class="w3-modal fade">
+    <div class="w3-modal-content radius w3-animate-zoom">  
+         <div class="w3-container radius" style="background-color: white;">  
+            <span onclick="document.getElementById('dataModal').style.display='none'" class="w3-button w3-display-topright"  data-dismiss="w3-modal">&times;</span>
+            <h3>食品履歷</h3><hr>
+            <div class="modal-body" id="project_detail">
+                <table class="w3-table tab-w100_80">
+                    <tr>
+                        <th class="bold2">履歷編號</th>
+                        <td>FR000</td>
+                    </tr>
+                </table>
+
+                <table class="w3-table tab-w100_200">
+                    <tr>
+                        <th class="bold2">商家名稱</th>
+                        <td>醜小鴨</td>
+                    </tr>
+                    <tr>
+                        <th class="bold2">聯係電話</th>
+                        <td>+886901123456</td>
+                    </tr>
+                </table>
+
+                <table class="w3-table tab-w30p_5p">
+                    <tr>
+                        <th class="bold2">聯係地址</th>
+                        <td>臺中市南屯區文華路226號</td>
+                    </tr>
+                </table>
+                
+                <table class="w3-table tab-works-on">
+                    <tr>
+                        <th class="bold2" style="width: 60px;">商品數量</th>
+                        <th class="bold2" style="width: 300px;">商品名稱</th>
+                        <th class="bold2" style="width: 60px;"> 保質期限</th>
+                        <th class="bold2" style="width: 60px;"> 重量</th>
+                        <th class="bold2" >                     取貨期限 | 送達時間</th>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>鷄肉</td>
+                        <td>24h</td>
+                        <td>3.12kg</td>
+                        <td>2021-10-30 2030時 &#9;| 2021-10-30 2050時</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>豬肉</td>
+                        <td>20h</td>
+                        <td>3.64kg</td>
+                        <td>2021-11-02 1300時 &#9;| 2021-11-02 1320時</td>
+                    </tr>
+                </table>
+            </div>
+            <button type="button" onclick="document.getElementById('dataModal').style.display='none'" class="button-close fl-lf" data-dismiss="w3-modal">確認</button>  
+         </div>  
+    </div>  
+</div>
+<!-- check_tel data view-->
+<div id="check_tel_Modal" class="w3-modal fade">
+    <div class="w3-modal-content radius w3-animate-zoom">  
+         <div class="w3-container radius" style="background-color: white;">  
+            <span onclick="document.getElementById('check_tel_Modal').style.display='none'" class="w3-button w3-display-topright"  data-dismiss="w3-modal">&times;</span>
+            <h3>聯係厨房</h3><hr>
+            <div class="modal-body" id="check_tel_detail">
+                <table class="w3-table tab-w100_80">
+                    <tr>
+                        <th class="bold2">商家編號</th>
+                        <td>E00000</td>
+                    </tr>
+                </table>
+
+                <table class="w3-table tab-w100_200">
+                    <tr>
+                        <th class="bold2">商家名稱</th>
+                        <td>醜小鴨</td>
+                    </tr>
+                    <tr>
+                        <th class="bold2">聯係電話</th>
+                        <td>0901123456</td>
+                    </tr>
+                </table>
+
+                <table class="w3-table tab-w30p_5p">
+                    <tr>
+                        <th class="bold2">聯係地址</th>
+                        <td>臺中市西屯區文華路226號</td>
+                    </tr>
+                </table>
+            </div>
+            <button type="button" onclick="document.getElementById('check_tel_Modal').style.display='none'" class="button-close fl-lf" data-dismiss="w3-modal">確認</button>  
+         </div>  
+    </div>  
+</div>
