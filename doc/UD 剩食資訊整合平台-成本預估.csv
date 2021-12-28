@@ -1,0 +1,15 @@
+﻿群組階層,區域,描述,服務,預付,每月,前 12 個月總計,貨幣,組態摘要
+UD 剩食資訊整合平台,美國東部 (俄亥俄),剩食資訊整合平台內容投放,Amazon CloudFront,0,0.11,1.32,USD,"資料傳出至網際網路 (1 GB 每個 月), 資料傳出至原始伺服器 (1 GB 每個 月)"
+,,Web雲端應用存儲,S3 Standard,0,0.12,1.44,USD,S3 標準儲存 (1 GB 每個 月)
+,,Web雲端應用存儲,Data Transfer,0,0,0,USD,"DT 傳入: Internet (1 GB 每月), DT 傳出: Amazon CloudFront (1 GB 每月)"
+,,API呼叫傳遞,Amazon API Gateway,0,3.5,42,USD,"HTTP API 請求單位 (百萬), 每個請求的平均大小 (34 KB), REST API 請求單位 (百萬), 快取記憶體大小 (GB) (無), WebSocket 訊息單位 (千個), 平均訊息大小 (32 KB), 請求 ( 每月), 請求 (1 每月)"
+,,API函式處理 + 定時事件觸發,AWS Lambda,0,0.02,0.24,USD,"架構 (x86), 架構 (x86), 請求計數 (100000 每月)"
+,,存儲客戶及食品資料,DynamoDB on-demand capacity,0,0.39,4.68,USD,"平均項目大小 (所有屬性) (1 KB), 資料儲存大小 (1 GB)"
+,,定時檢查食品安全,Amazon EventBridge,0,0.0106,0.13,USD,"裝載的大小 (1 KB), 自訂事件數量 (3000 每月), Number of invocations (3000 每月), 事件數量 (3000 每月), 重播事件的數量 (3000 每月)"
+,,食品過過期警訊,Standard topics,0,0.06,0.72,USD,"DT 傳入: 所有其他區域 (1 GB 每月), DT 傳出: Amazon CloudFront (0 GB 每月), 請求 (3000 每月), HTTP/HTTPS 通知 ( 每月), 電子郵件/電子郵件 JSON 通知 (3000 每月), SQS 通知 ( 每月)"
+,,User Pool,Amazon Cognito,0,2.5,30,USD,"進階安全功能 (已啟用), 每月作用中使用者數量 (MAU) (50)"
+,,,,,6.7106,80.53,USD,
+,,,,,,,,
+,,,,,,,,
+確認,,,,,,,,
+* AWS 定價計算器只提供您的 AWS 費用預估，不包括任何可能適用的稅金。您的實際費用取決於多種因素，包括您對 AWS 服務的實際使用情況。,,,,,,,,
