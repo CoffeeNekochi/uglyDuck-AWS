@@ -1,0 +1,64 @@
+CloudFront
+==========================================
+1. Default root object: index.html
+2. Origin domain: XXX.s3.regionXXX.amazonaws.com
+3. S3 bucket access: OAI (bucket can restrict access to only CloudFront)
+4. Origin request policy: CORS-S3Origin
+
+S3
+==========================================
+1. Bucket policy: 
+{
+    "Version": "2008-10-17",
+    "Id": "PolicyForCloudFrontPrivateContent",
+    "Statement": [
+        {
+            "Sid": "1",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity XXX"
+            },
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::XXX/*"
+        }
+    ]
+}
+
+2. Cross-origin resource sharing (CORS):
+[
+    {
+        "AllowedHeaders": [
+            "*"
+        ],
+        "AllowedMethods": [
+            "PUT",
+            "POST",
+            "DELETE",
+            "GET"
+        ],
+        "AllowedOrigins": [
+            "https://XXX.cloudfront.net"
+        ],
+        "ExposeHeaders": [
+            "x-amz-server-side-encryption",
+            "x-amz-request-id",
+            "x-amz-id-2"
+        ],
+        "MaxAgeSeconds": 3000
+    },
+    {
+        "AllowedHeaders": [],
+        "AllowedMethods": [
+            "GET"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": []
+    }
+]
+
+Amazon EventBridge rule
+==========================================
+Define pattern: Schedule, Fixed rate every 10 Minutes
+Target: Lambda function
