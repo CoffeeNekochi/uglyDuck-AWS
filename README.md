@@ -21,6 +21,7 @@
 本系統采以響應式網頁設計將此平臺呈現，使用者可透過電腦及手機瀏覽器以超鏈接快速進入平臺，無需下載即可執行以降低使用者使用需求。使用者在網站前端執行的動作將通過API接口進行資料操作傳遞，並從後端執行計算后回饋給使用者。同時也會利用使用者認證來進行使用者界面控制，為不同使用者提供個別使用界面。但發生警訊觸發事件時，也會通過資料庫選擇發送警訊對象並對其發送簡訊進行通知，以確保食品安全都在標準下。
 
 ## 五、學習影片
+<<<<<<< HEAD
 [CRUD with Lambda + API Gateway + DynamoDB](https://youtu.be/Ut5CkSz6NR0)
 [Frontend with Javascript + DynamoDB + Cognito](https://youtu.be/jKvbOhJ7RtQ)
 
@@ -34,4 +35,11 @@
 [DynamoDB Query and GetItem](https://youtu.be/Nk_vjiv6_bE)
 [DynamoDB Scan vs Query](https://youtu.be/U-yApJ2_FCE)
 [SNS + Lambda](https://youtu.be/PsJsP-7cydk)
+=======
+### CRUD with Lambda + API Gateway + DynamoDB
+{%youtube Ut5CkSz6NR0 %}
+
+### Frontend with Javascript + DynamoDB + Cognito
+{%youtube jKvbOhJ7RtQ %}
+>>>>>>> main
 
